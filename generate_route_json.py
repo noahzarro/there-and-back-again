@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 import json
 
 """
@@ -12,24 +13,34 @@ ex marked files/dirs will be marked as extended
 do not include _ in cityname
 """
 
-start_directory = Path('static/pics')
+start_directory = 'static/pics'
 
 route = []
 
-for item in start_directory.iterdir():
-    if item.is_dir():
+for dir_name in sorted(os.listdir(start_directory)):
+    if os.path.isdir(os.path.join(start_directory, dir_name)):
         extended = False
-        split_name = item.name.split("_")
+        print(dir_name)
+        split_name = dir_name.split("_")
         city = split_name[1]
-        if item.name.split("_")[-1] == "ex":
+        if split_name[-1] == "ex":
             extended = True
         route.append({"type": "city", "name": city, "extended": extended})
-        for file in item.iterdir():
+        files = os.listdir(os.path.join(start_directory, dir_name))
+        sorted_files = sorted(files, key=lambda name: name.lower())
+        for file_name in sorted_files:
             extended = False
-            path = "static/pics/" + item.name + "/" + file.name
-            if file.name.split("_")[-1].split(".")[0] == "ex":
+            path = os.path.join(start_directory, dir_name, file_name)
+            print(file_name)
+            if file_name.split("_")[-1].split(".")[0] == "ex":
                 extended = True
             route.append({"type": "pic", "path": path, "extended": extended})
 
 with open("static/route.json", "w") as f:
     json.dump(route, f)
+
+exit(0)
+di = os.listdir(os.path.join(start_directory, "012_Dubrovnik"))
+print(di)
+so = sorted(di, reverse=True)
+print(so)
