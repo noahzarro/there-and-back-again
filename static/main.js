@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("static/route.json")
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             main_container = document.getElementById("main_container")
             for (item of data) {
                 
@@ -50,6 +49,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 
             }
+
+            end_template = 
+            `<div class="row}">
+                <div class="col-lg-4 offset-lg-4">
+                    <div class="end">Slut</div>
+                </div>
+            </div>`
+                    
+                    
+
+            const temp_div = document.createElement("div");
+            temp_div.innerHTML = end_template;
+
+            main_container.appendChild(temp_div.firstChild)
+
         })
         .catch(error => {
             console.error("Error fetching JSON:", error);

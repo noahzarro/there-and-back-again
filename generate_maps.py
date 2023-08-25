@@ -33,7 +33,8 @@ for item in routes:
 
 
 #missing = ["Kapadokya", "Tokyo", "Хива, Xorazm, Uzbekistan", "Karakol, Issyk-Kul, Kyrgyzstan", "Buan"]
-missing = ["Central Asia"]
+#missing = ["Kazakhstan", "Turkey", "Bucharest", "Vienna"]
+missing = ["Georgia"]
 for name in missing:
     coords = get_coordinates(name)
     download_map(name, coords[0], coords[1])
