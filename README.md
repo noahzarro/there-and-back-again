@@ -40,3 +40,6 @@ It will look up coordinates for all the city names in `route.json` (countries ar
 
 ### Running
 The actual web server can be started by executing `python main.py` in the main folder.
+
+### Docker
+A docker container can be build via `docker build -t `
