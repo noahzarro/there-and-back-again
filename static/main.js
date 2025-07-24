@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     city_template = `<div class="row ${extended_class}">
                     <div class="col-lg-4 offset-lg-4">
                         <div class="map-item">
-                            <img src="${image_path}">
+                            <img loading="lazy" src="${image_path}">
                             <div>
                                 ${city_name}
                             </div>
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     image_template = `<div class="row ${extended_class}">
                     <div class="col-lg-4 offset-lg-4">
                         <div class="img-item">
-                            <img src="${image_path}">
+                            <img loading="lazy"src="${image_path}">
                         </div>
                     </div>
                     </div>`
