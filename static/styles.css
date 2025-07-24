@@ -1,7 +1,15 @@
+body {
+    background-color: #f5f3dc;
+}
+
 .map-item > img {
     max-width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+        border-color: rgb(0, 153, 255);
+    border-style: solid;
+    border-bottom-style: hidden;
+    border-width: 4px;
     display: block;
 }
 
@@ -14,6 +22,10 @@
     font-weight: 500;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    border-color: rgb(0, 153, 255);
+    border-style: solid;
+    border-top-style: hidden;
+    border-width: 4px;
 }
 
 .map-item {
@@ -36,6 +48,9 @@
     max-width: 100%;
     border-radius: 20px;
     display: block;
+    border-color: rgb(0, 153, 255);
+    border-style: solid;
+    border-width: 4px;
 }
 
 .img-item {
